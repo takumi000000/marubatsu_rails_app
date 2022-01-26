@@ -1,0 +1,25 @@
+<h1>回答ページ</h1>
+<p><%= @question.content if @question.content %></p>
+
+<input type="button" value="ヒント" onclick="clickBtn1()" />
+<div id="hint">ヒント:<%= @question.hint if @question.hint %></div>
+
+  <script>
+    document.getElementById("hint").style.display ="none";
+    function clickBtn1(){
+      const hint = document.getElementById("hint");
+      if(hint.style.display=="block"){
+        hint.style.display ="none";
+      }else{
+        hint.style.display ="block";
+      }
+    }
+  </script>
+
+<%= button_to"○", judge_path(params: {select: 1}) %>
+<%= button_to "x", judge_path(params: {select: 0}) %>
+
+<%# ↑まるばつでcorrect_flagをパラメータで送る %>
+
+
+<%= link_to "結果", quiz_result_path %>
