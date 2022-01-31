@@ -25,4 +25,4 @@ Things you may want to cover:
 
 
 exam.html.erb o x
-gemfile
+gemfile# marubatsu_rails_app
