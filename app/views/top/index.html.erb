@@ -1,4 +1,4 @@
 <h1>Topページ</h1>
 <% @genres.each do |genre| %>
-  <%= link_to "#{genre.name}",controller: 'quiz',action:'exam',question_id: @questions.where(genre_id: genre.id)[rand(0..@questions.where(genre_id: genre.id).length - 1)].id %>
+  <%= link_to "#{genre.name}",controller: 'quiz',action:'exam',question_id: genre %>
 <% end %>

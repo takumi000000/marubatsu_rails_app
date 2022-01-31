@@ -7,14 +7,22 @@ class QuizController < ApplicationController
   end
 
   def judge
-    @question = Question.order("id")
-    @select = params[:select]
-    if @select.eql(@question.correct_flag)
-      puts "正解"  # debug
+    @question = Question.first
+    @select = params[:select].to_i
+
+    if @question.correct_flag
+      @flag = 1
     else
-      puts "不正解"  # debug
+      @flag = 0
     end
-    redirect_to action: :result
+
+    if @flag == @select
+      puts "正解です"
+    else
+      puts "不正解です"
+    end
+
+
   end
  
   def create_result

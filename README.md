@@ -26,3 +26,4 @@ Things you may want to cover:
 
 exam.html.erb o x
 gemfile# marubatsu_rails_app
+"# marubatsu_rails_app" 
